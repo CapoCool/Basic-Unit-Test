@@ -1,0 +1,43 @@
+//Dillan Poorman
+//CSE360
+//04/15/2021
+
+package unittest;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class RandomMethodsTest {
+	RandomMethods rand = new RandomMethods();
+
+	@Test
+	public void isNegativeTest() {
+		assertTrue("is Negative did not return true as it should've", rand.isNegative(-1));
+		assertFalse("is Negative did not return false as it should've", rand.isNegative(1));
+	}
+	
+	@Test
+	public void stringLengthTest() {
+		assertEquals("The string Dillan did not return 6 as it should've", 6, rand.stringLength("Dillan"));
+	}
+	
+	@Test
+	public void daysInMonthTest() {
+		assertEquals("January 2021 has 31 days", rand.daysInMonth(1, 2021));
+		assertEquals("February 2021 has 28 days", rand.daysInMonth(2, 2021));
+		assertEquals("March 2021 has 31 days", rand.daysInMonth(3, 2021));
+		assertEquals("April 2021 has 30 days", rand.daysInMonth(4, 2021));
+		assertEquals("May 2021 has 31 days", rand.daysInMonth(5, 2021));
+		assertEquals("June 2021 has 30 days", rand.daysInMonth(6, 2021));
+		assertEquals("July 2021 has 31 days", rand.daysInMonth(7, 2021));
+		assertEquals("August 2021 has 31 days", rand.daysInMonth(8, 2021));
+		assertEquals("September 2021 has 30 days", rand.daysInMonth(9, 2021));
+		assertEquals("October 2021 has 31 days", rand.daysInMonth(10, 2021));
+		assertEquals("November 2021 has 30 days", rand.daysInMonth(11, 2021));
+		assertEquals("December 2021 has 31 days", rand.daysInMonth(12, 2021));
+	}
+
+}
