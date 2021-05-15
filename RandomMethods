@@ -1,0 +1,99 @@
+package unittest;
+
+public class RandomMethods {
+//Dillan Poorman
+//CSE360
+//04/15/2021
+	  /*****
+	   * A variation of the function used in https://www.w3resource.com/java-exercises/conditional-statement/java-conditional-statement-exercise-7.php
+	   * Find the number of days in a month for a particular year.
+	   * @param month - the month number, e.g. 6 = June
+	   * @param year - the year number since a leap year will change the number of days in February
+	   * @return value - a string indicating how many days are in a given month for a particular year
+	  *****/
+	  public String daysInMonth( int month, int year ) {
+	    String value = "";
+
+	    switch( month ) {
+	      case 1:
+	        value = "January " + year + " has 31 days";
+	        break;
+	      case 2: 
+	        value = "February " + year + " has ";
+	        /* If the year is a leap year, February has 29 days instead of 28 days */
+	        if( (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)) ) {
+	          value += "29 days";
+	        } else {
+	          value += "28 days";
+	        }
+	        break;
+	      case 3:
+	        value = "March " + year + " has 31 days";
+	        break;
+	      case 4:
+	        value = "April " + year + " has 30 days";
+	        break;
+	      case 5:
+	        value = "May " + year + " has 31 days";
+	        break;
+	      case 6:
+	        value = "June " + year + " has 30 days";
+	        break;
+	      case 7:
+	        value = "July " + year + " has 31 days";
+	        break;
+	      case 8:
+	        value = "August " + year + " has 31 days";
+	        break;
+	      case 9:
+	        value = "September " + year + " has 30 days";
+	        break;
+	      case 10:
+	        value = "October " + year + " has 31 days";
+	        break;
+	      case 11:
+	        value = "November " + year + " has 30 days";
+	        break;
+	      case 12:
+	        value = "December " + year + " has 31 days";
+	        break;
+	      default:
+	        value = "Unknown month number";
+	    }
+	    return value;
+	  }
+
+	  /*****
+	   * Check to see if the given number is negative ( < 0 ) or positive ( > 0 )
+	   * @param number - integer that the function needs to determine whether it is negative or positive
+	   * @return value - 'true' if number is negative. 'false' if number is positive
+	  *****/
+	  public boolean isNegative( int number ) {
+	    boolean value = false;
+
+	    if(number < 0) {
+	    	value = true;
+	    }
+
+	    return value;
+	  }
+
+	  /*****
+	   * Use a loop to go through the given input string and count the number of vowels(a, e, i, o, u) in it
+	   * For example, "The quick brown fox jumps over the lazy dog."
+	   *      Function should return 11
+	   * @param input - input that is passed into the function
+	   * @return value - the number of vowels in the input string
+	  *****/
+	  public int stringLength( String input ) {
+	    int value = 0;
+
+	    char[] array = input.toCharArray();
+	    
+	    for(char c : array) {
+	    	value++;
+	    }
+
+	    return value;
+	  }
+	}
